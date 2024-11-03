@@ -35,6 +35,20 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
         document.getElementById('more-info').setAttribute('href',wonder.links.wiki);
         document.getElementById('more-info').setAttribute('target','__blank');
 
+        const mapLink = wonder.links.google_maps;
+
+        // Extracting latitude and longitude from the mapLink for embedding
+        const latLngMatch = mapLink.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+        if (latLngMatch) {
+            const latitude = latLngMatch[1];
+            const longitude = latLngMatch[2];
+            // Create the Google Maps embed URL
+            console.log("Latitude: ",latitude,"Longitude: ",longitude);
+            
+        } else {
+            console.error('Could not extract latitude and longitude from the map link');
+        }
+
         //show initial slide
         showDivs(slideIndex);
     })
@@ -69,3 +83,6 @@ function showDivs(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " w3-white";
 }
+
+
+// AIzaSyDRMSTgnbbS1JIVa-AMTd0r2fqpZnoF8Oo
