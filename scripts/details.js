@@ -25,6 +25,8 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
             indicators.appendChild(dot);
         });
 
+        document.getElementById('wonder-name').innerText = wonder.name;
+
         //show initial slide
         showDivs(slideIndex);
     })

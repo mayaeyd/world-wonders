@@ -87,4 +87,5 @@ header > p{
     font-family: 'Gallient'; 
     font-weight: bolder;
     cursor: pointer;
+    letter-spacing: 1px;
 }

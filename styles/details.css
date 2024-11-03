@@ -1,9 +1,15 @@
-.slideshow-container {
+@import url(./../utilities/fonts.css);
+
+.container{
     display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    width: 40%; 
-    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.slideshow-container{
+    max-width: 40%;
 }
 
 #slideshow {
@@ -13,5 +19,16 @@
 /* override w3schools styles */
 #slideshow.w3-content.w3-display-container {
     display: block;
-    margin: 0;
+    /* margin: 0; */
 }
+
+.wonder-name{
+    font-family: 'Gallient';
+    color: white;
+    font-weight: bolder;
+    font-size: 5rem;
+    letter-spacing: 1px;
+    z-index: 1; /* Ensure it is above other elements */
+    position: relative;
+}  
+
