@@ -1,0 +1,16 @@
+@import url(./../utilities/fonts.css);
+
+h1{
+    font-family: 'Gallient';
+    color: white;
+}
+
+h2{
+    font-family: 'Sequel Sans Semi Bold Disp';
+    color: white;
+}
+
+.landing-screen{
+    
+    background-image: url(./../assets/images/pyramids.jpg);
+}
