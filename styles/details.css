@@ -4,12 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
+    height: 100vh;
     width: 100%;
 }
 
 .slideshow-container{
-    max-width: 40%;
+    max-width: 30%;
 }
 
 #slideshow {
@@ -26,9 +26,16 @@
     font-family: 'Gallient';
     color: white;
     font-weight: bolder;
-    font-size: 5rem;
+    font-size: 4.5rem;
     letter-spacing: 1px;
     z-index: 1; /* Ensure it is above other elements */
     position: relative;
 }  
+
+.wonder-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: auto;
+}
 

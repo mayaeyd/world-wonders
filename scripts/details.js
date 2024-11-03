@@ -26,6 +26,10 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
         });
 
         document.getElementById('wonder-name').innerText = wonder.name;
+        document.getElementById('wonder-summary').innerText = wonder.summary;
+        document.getElementById('wonder-location').innerText = `Located in ${wonder.location}`;
+        //if built year nv -> BCE else CE
+        document.getElementById('wonder-year').innerText = `Built in ${wonder.build_year < 0 ? Math.abs(wonder.build_year) + ' BCE' : wonder.build_year + ' CE'}`;
 
         //show initial slide
         showDivs(slideIndex);
