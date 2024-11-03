@@ -46,25 +46,31 @@ header > p{
     font-weight: lighter;
 }
 
-.wonders-container{
+.masonry {
+    margin-top: 100px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-left: 30px;
     align-items: center;
-    margin-top: 50px;
-    margin: 0px;
+    justify-content: center; 
 }
 
-.wonder-container{
-    flex: 1 1 300px;
-    height: auto;
-    margin: 0px;
+.wonder-container {
+    width: calc(25% - 16px); 
+    margin: 5px; 
+    position: relative; 
+    overflow: hidden;
+    background: black;
 }
 
-.image-container{
-    height: 50%;
-    width: 90%;
+.image-container {
     filter: grayscale(100%);
-    margin: 0px;
+    width: 100%;
+    /* height: auto; */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; 
 }
 
+.wonder-container:hover .image-container {
+    transform: scale(1.05); 
+}
