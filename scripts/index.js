@@ -18,12 +18,13 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
             name.classList.add('wonder-title');
 
             image.src=wonder.links.images[0];
-            image.setAttribute('loading', 'lazy');
             name.textContent = wonder.name;
 
             wonderDiv.appendChild(image);
             wonderDiv.appendChild(name);
             wondersDiv.appendChild(wonderDiv);
+
+            wonderDiv.addEventListener('click',goToInfo);
         });
 
         new Masonry(wondersDiv,{
@@ -36,3 +37,9 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
         console.error('Error fetching data:', error);
     });
 
+
+function goToInfo(){
+    console.log('clicked'); 
+}
+
+    
