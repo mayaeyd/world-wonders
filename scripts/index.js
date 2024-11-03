@@ -21,6 +21,11 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
             wonderDiv.appendChild(image);
             wondersDiv.appendChild(wonderDiv);
         });
+        new Masonry(wondersDiv, {
+            itemSelector: '.wonder-container',
+            columnWidth: '.wonder-container',
+            percentPosition: true
+        });
         
     })
     .catch(error => {
