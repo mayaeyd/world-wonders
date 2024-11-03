@@ -39,7 +39,7 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
 
 
 function goToInfo(){
-    console.log('clicked'); 
+    window.location.href='../details.html';
 }
 
     
