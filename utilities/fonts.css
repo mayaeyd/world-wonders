@@ -4,6 +4,16 @@
 }
 
 @font-face {
+    font-family: 'Sequel Light';
+    src: url(./../assets/fonts/Sequel\ Sans\ Light\ Disp.ttf);
+}
+
+@font-face {
+    font-family: 'Sequel Roman';
+    src: url(./../assets/fonts/Sequel\ Sans\ Roman\ Disp.ttf);
+}
+
+@font-face {
     font-family: 'Sequel Bold';
     src: url(./../assets/fonts/Sequel\ Sans\ Bold\ Disp.ttf);
 }

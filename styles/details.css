@@ -10,6 +10,9 @@
 
 .slideshow-container{
     max-width: 30%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 #slideshow {
@@ -35,7 +38,31 @@
 .wonder-info{
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    height: auto;
+    align-items: flex-start;
+    height: 100vh;
+    margin-left: 20px;
 }
+
+.wonder-descriptions{
+    position: fixed;
+    left: 40%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 30px;
+    margin-top: 20px;
+    background-color:  rgba(128, 128, 128, 0.266);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.wonder-descriptions div{
+    font-family: 'Sequel Light';
+    font-size:1.3em;
+    letter-spacing: 0.5px;
+}
+
+
+
 

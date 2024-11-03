@@ -31,6 +31,10 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
         //if built year nv -> BCE else CE
         document.getElementById('wonder-year').innerText = `Built in ${wonder.build_year < 0 ? Math.abs(wonder.build_year) + ' BCE' : wonder.build_year + ' CE'}`;
 
+        document.getElementById('more-info').innerText = `Know More About ${wonder.name}`;
+        document.getElementById('more-info').setAttribute('href',wonder.links.wiki);
+        document.getElementById('more-info').setAttribute('target','__blank');
+
         //show initial slide
         showDivs(slideIndex);
     })
