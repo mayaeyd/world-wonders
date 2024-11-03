@@ -1,14 +1,13 @@
 // const axios = require('axios');
-
 axios.get('https://www.world-wonders-api.org/v0/wonders')
     .then(response => {
-        const wondersDiv = document.getElementById('wonders-container');
         const result = response.data;
+        const wondersDiv = document.getElementById('wonders-container');
 
         wondersDiv.innerHTML = '';
 
         
-        result.forEach(wonder => {
+        result.forEach((wonder, index) => {
             const wonderDiv = document.createElement('div');
             const image = document.createElement('img');
             const name = document.createElement('div');
@@ -24,7 +23,7 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
             wonderDiv.appendChild(name);
             wondersDiv.appendChild(wonderDiv);
 
-            wonderDiv.addEventListener('click',goToInfo);
+            wonderDiv.addEventListener('click',() => goToInfo(index));
         });
 
         new Masonry(wondersDiv,{
@@ -38,7 +37,8 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
     });
 
 
-function goToInfo(){
+function goToInfo(wonderIndex){
+    localStorage.setItem('wonder-name',wonderIndex);
     window.location.href='../details.html';
 }
 
