@@ -1,16 +1,46 @@
 @import url(./../utilities/fonts.css);
 
-h1{
-    font-family: 'Gallient';
-    color: white;
+header {
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
 }
 
-h2{
-    font-family: 'Sequel Sans Semi Bold Disp';
+.title{
+    font-family: 'Gallient';
     color: white;
+    font-size: 5rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding-bottom: 0px;
+    line-height: 10px;
+    z-index: 1;
+    
+}
+
+.subtitle{
+    font-family: 'Sequel Sans Semi Bold Disp';
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    color: white;
+    z-index: 1;
 }
 
 .landing-screen{
-    
+    height: 60vh;
     background-image: url(./../assets/images/pyramids.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    margin-top: -40px;
+}
+
+header > p{
+    margin-top: 100px;
+    width: 70vw;
+    color: white;
+    font-family: 'Sequel Sans Semi Bold Disp';
+    text-transform: uppercase;
+    font-weight: lighter;
 }
