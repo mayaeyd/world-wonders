@@ -1,0 +1,17 @@
+.slideshow-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    width: 40%; 
+    height: 100vh;
+}
+
+#slideshow {
+    max-width: 100%;
+}
+
+/* override w3schools styles */
+#slideshow.w3-content.w3-display-container {
+    display: block;
+    margin: 0;
+}
