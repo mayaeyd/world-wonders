@@ -46,20 +46,20 @@ header > p{
     font-weight: lighter;
 }
 
-.masonry {
+.wonders-container {
     margin-top: 100px;
     display: flex;
+    flex-wrap: wrap;
     margin-left: 30px;
     align-items: center;
     justify-content: center; 
 }
 
 .wonder-container {
-    width: calc(25% - 16px); 
-    margin: 5px; 
     position: relative; 
     overflow: hidden;
-    background: black;
+    width: calc(25% - 16px);
+    margin: 5px;
 }
 
 .image-container {
