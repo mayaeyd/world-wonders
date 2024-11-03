@@ -38,7 +38,7 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
 
 
 function goToInfo(wonderIndex){
-    localStorage.setItem('wonder-name',wonderIndex);
+    localStorage.setItem('wonder-index',wonderIndex);
     window.location.href='../details.html';
 }
 
