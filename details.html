@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./utilities/styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./styles/details.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         .mySlides {display:none}
         .w3-left, .w3-right, .w3-badge {cursor:pointer}
@@ -16,7 +17,6 @@
         <body> 
         
         <div class="container">
-            
             <div class="wonder-info">
                 <div class="slideshow-container">
                     <div id="slideshow" class="w3-content w3-display-container">
@@ -33,14 +33,15 @@
                     <div id="wonder-location"></div>
                     <div id="wonder-year"></div>
                     <a id="more-info"></a>
-                    <div id="wonder-map">
-
-                    </div>
+                    <div id="wonder-map"></div>
                 </div>
             </div>
         </div>
 
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/details.js"></script>
 </body>
 </html>
+

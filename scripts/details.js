@@ -21,9 +21,10 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
             const dot = document.createElement('span');
             dot.classList.add('w3-badge', 'demo', 'w3-border', 'w3-transparent', 'w3-hover-white');
             //change slide to corresponding index
-            dot.onclick = () => currentDiv(index + 1);
+            dot.onclick = () => currentDiv(index+1);
             indicators.appendChild(dot);
         });
+        showDivs(slideIndex);
 
         document.getElementById('wonder-name').innerText = wonder.name;
         document.getElementById('wonder-summary').innerText = wonder.summary;
@@ -36,21 +37,26 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
         document.getElementById('more-info').setAttribute('target','__blank');
 
         const mapLink = wonder.links.google_maps;
+        
+        if(!mapLink){
+            document.getElementById('wonder-map').style.display='none'
+        }else{
+            const latLngMatch = mapLink.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
 
-        // Extracting latitude and longitude from the mapLink for embedding
-        const latLngMatch = mapLink.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-        if (latLngMatch) {
-            const latitude = latLngMatch[1];
-            const longitude = latLngMatch[2];
-            // Create the Google Maps embed URL
-            console.log("Latitude: ",latitude,"Longitude: ",longitude);
-            
-        } else {
-            console.error('Could not extract latitude and longitude from the map link');
+            if (latLngMatch) {
+                const latitude = latLngMatch[1];
+                const longitude = latLngMatch[2];
+    
+                const map = L.map('wonder-map').setView([latitude, longitude], 17);
+    
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                }).addTo(map);
+    
+                L.marker([latitude, longitude]).addTo(map); 
+            }
         }
 
-        //show initial slide
-        showDivs(slideIndex);
     })
     .catch(error => {
         console.error('Error fetching data:', error);
@@ -83,6 +89,3 @@ function showDivs(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " w3-white";
 }
-
-
-// AIzaSyDRMSTgnbbS1JIVa-AMTd0r2fqpZnoF8Oo

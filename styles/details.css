@@ -1,22 +1,16 @@
 @import url(./../utilities/fonts.css);
 
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-}
 
 .slideshow-container{
     max-width: 30%;
     height: 100vh;
-    display: flex;
-    align-items: center;
+    float: left;
 }
 
 #slideshow {
     max-width: 100%;
+    margin-top: 200px;
+    margin-left: 50px;
 }
 
 /* override w3schools styles */
@@ -31,21 +25,13 @@
     font-weight: bolder;
     font-size: 4.5rem;
     letter-spacing: 1px;
-    z-index: 1; /* Ensure it is above other elements */
+    z-index: 1; 
     position: relative;
 }  
 
-.wonder-info{
-    display: flex;
-    width: 100%;
-    align-items: flex-start;
-    height: 100vh;
-    margin-left: 20px;
-}
-
 .wonder-descriptions{
-    position: fixed;
-    left: 40%;
+    float: right;
+    max-width: 60%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -55,7 +41,8 @@
     background-color:  rgba(128, 128, 128, 0.266);
     padding: 40px;
     border-radius: 10px;
-    
+    max-height: auto;
+    overflow-y: auto;
 }
 
 .wonder-descriptions div{
@@ -64,6 +51,8 @@
     letter-spacing: 0.5px;
 }
 
-
-
+#wonder-map{
+    height: 400px;
+    width: 100%;
+}
 
