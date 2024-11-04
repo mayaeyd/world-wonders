@@ -41,12 +41,17 @@ axios.get('https://www.world-wonders-api.org/v0/wonders')
         if(!mapLink){
             document.getElementById('wonder-map').style.display='none'
         }else{
+
+            //check if it has a valid link
+            //checks for an @, latitude value (-?\d+\.\d+) that may be negative (-?) and 
+            //has one or more digits, a decimal point and more digits
             const latLngMatch = mapLink.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
 
             if (latLngMatch) {
                 const latitude = latLngMatch[1];
                 const longitude = latLngMatch[2];
     
+                //create map and embed it in wonder-map div
                 const map = L.map('wonder-map').setView([latitude, longitude], 17);
     
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
